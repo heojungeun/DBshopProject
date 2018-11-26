@@ -308,5 +308,16 @@ INSERT INTO ITEM VALUES
 ('W825-340', 'Stretch wrap', '4 / EA', 14800, 1323, 124, 3785),
 ('W825-423', 'Stretch wrap', '4 / EA', 15900, 1323, 124, 0);
 
+#add foreign key
+
+ALTER TABLE ITEM foreign key (Icategory_id) REFERENCES CATEGORY (Category_id);
+ALTER TABLE ITEM foreign key (Ibrand_id) REFERENCES BRAND (Brand_id);
+ALTER TABLE SUPPLIER_BRAND foreign key (S_Supplier_id) REFERENCES SUPPLIER (Supplier_id);
+ALTER TABLE SUPPLIER_BRAND foreign key (S_Brand_id) REFERENCES BRAND (Brand_id);
+ALTER TABLE SHOPBAG foreign key (SItem_code) REFERENCES ITEM (Item_code);
+ALTER TABLE ORDER foreign key (Octm_id) REFERENCES CUSTOMER (Custom_id);
+ALTER TABLE ORDER foreign key (Obag_id) REFERENCES SHOPBAG (Bag_id);
+ALTER TABLE ORDER foreign key (Oship_id) REFERENCES SHIPCP (Ship_id);
+
 select COUNT(*) from ITEM where Stock <= 20;
 select COUNT(*) from CUSTOMER;
