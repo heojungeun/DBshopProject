@@ -2,7 +2,7 @@
 #CREATE DATABASE SPM;
 #USE SPM;
 
-/*
+
 DROP TABLE SUPPLIER;
 DROP TABLE CUSTOMER;
 DROP TABLE SHOPBAG;
@@ -12,7 +12,7 @@ DROP TABLE SUPPLIER;
 DROP TABLE SUPPLIER_BRAND;
 DROP TABLE BRAND;
 DROP TABLE ITEM;
-*/
+
 
 CREATE TABLE CUSTOMER (
   Custom_id INT(11) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE CUSTOMER (
 );
 CREATE TABLE SHOPBAG (
   Bag_id INT(11) NOT NULL,
-  Sitem_code INT(20) NOT NULL,
+  SItem_code INT(20) NOT NULL,
   Total_price VARCHAR(32) NOT NULL,
   PRIMARY KEY (Bag_id)
 );
@@ -63,7 +63,7 @@ Supplier_id INT NOT NULL,
 CREATE TABLE SUPPLIER_BRAND
   (
     S_Supplier_id INT NOT NULL,
-    S_brand_id  INT,
+    S_Brand_id  INT,
     PRIMARY KEY(S_Supplier_id, S_brand_id)
   );
 CREATE TABLE BRAND
@@ -310,14 +310,14 @@ INSERT INTO ITEM VALUES
 
 --add foreign key
 
-ALTER TABLE ITEM foreign key (Icategory_id) REFERENCES CATEGORY (Category_id);
-ALTER TABLE ITEM foreign key (Ibrand_id) REFERENCES BRAND (Brand_id);
-ALTER TABLE SUPPLIER_BRAND foreign key (S_Supplier_id) REFERENCES SUPPLIER (Supplier_id);
-ALTER TABLE SUPPLIER_BRAND foreign key (S_Brand_id) REFERENCES BRAND (Brand_id);
-ALTER TABLE SHOPBAG foreign key (SItem_code) REFERENCES ITEM (Item_code);
-ALTER TABLE ORDER foreign key (Octm_id) REFERENCES CUSTOMER (Custom_id);
-ALTER TABLE ORDER foreign key (Obag_id) REFERENCES SHOPBAG (Bag_id);
-ALTER TABLE ORDER foreign key (Oship_id) REFERENCES SHIPCP (Ship_id);
+ALTER TABLE ITEM ADD foreign key (Icategory_id) REFERENCES CATEGORY (Category_id);
+ALTER TABLE ITEM ADD foreign key (Ibrand_id) REFERENCES BRAND (Brand_id);
+ALTER TABLE SUPPLIER_BRAND ADD foreign key (S_Supplier_id) REFERENCES SUPPLIER (Supplier_id);
+ALTER TABLE SUPPLIER_BRAND ADD foreign key (S_Brand_id) REFERENCES BRAND (Brand_id);
+ALTER TABLE SHOPBAG ADD foreign key (SItem_code) REFERENCES ITEM (Item_code);
+ALTER TABLE ORDERS ADD foreign key (Octm_id) REFERENCES CUSTOMER (Custom_id);
+ALTER TABLE ORDERS ADD foreign key (Obag_id) REFERENCES SHOPBAG (Bag_id);
+ALTER TABLE ORDERS ADD foreign key (Oship_id) REFERENCES SHIPCP (Ship_id);
 
 select COUNT(*) from ITEM where Stock <= 20;
 select COUNT(*) from CUSTOMER;
