@@ -308,7 +308,7 @@ INSERT INTO ITEM VALUES
 ('W825-340', 'Stretch wrap', '4 / EA', 14800, 1323, 124, 3785),
 ('W825-423', 'Stretch wrap', '4 / EA', 15900, 1323, 124, 0);
 
-#add foreign key
+--add foreign key
 
 ALTER TABLE ITEM foreign key (Icategory_id) REFERENCES CATEGORY (Category_id);
 ALTER TABLE ITEM foreign key (Ibrand_id) REFERENCES BRAND (Brand_id);
