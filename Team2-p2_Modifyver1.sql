@@ -26,20 +26,7 @@ CREATE TABLE CUSTOMER (
   Type VARCHAR(15),
   PRIMARY KEY (Custom_id)
 );
-CREATE TABLE SHOPBAG (
-  Bag_id INT(11) NOT NULL,
-  Bctm_id INT(11) NOT NULL,
 
-  Total_price VARCHAR(32) NOT NULL,
-  PRIMARY KEY (Bag_id)
-);
-CREATE TABLE SHOPITEM (
-  Sbag_id INT(11) NOT NULL,
-  Sctm_id INT(11) NOT NULL,
-  Item_code  VARCHAR(10) NOT NULL,
-  Stotal_num INT,
-  PRIMARY KEY (Bag_id)
-);
 CREATE TABLE CATEGORY (
   Category_id INT(11) NOT NULL,
   Large_ct VARCHAR(32) NOT NULL,
