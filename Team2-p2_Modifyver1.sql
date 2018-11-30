@@ -28,8 +28,16 @@ CREATE TABLE CUSTOMER (
 );
 CREATE TABLE SHOPBAG (
   Bag_id INT(11) NOT NULL,
-  SItem_code VARCHAR(10) NOT NULL,
+  Bctm_id INT(11) NOT NULL,
+
   Total_price VARCHAR(32) NOT NULL,
+  PRIMARY KEY (Bag_id)
+);
+CREATE TABLE SHOPITEM (
+  Sbag_id INT(11) NOT NULL,
+  Sctm_id INT(11) NOT NULL,
+  Item_code  VARCHAR(10) NOT NULL,
+  Stotal_num INT,
   PRIMARY KEY (Bag_id)
 );
 CREATE TABLE CATEGORY (
@@ -83,11 +91,23 @@ CREATE TABLE ITEM
     Stock INT,
     PRIMARY KEY(Item_code)
   );
+  CREATE TABLE SHOPBAG (
+    Bag_id INT(11) NOT NULL,
+    Bctm_id INT(11) NOT NULL,
 
---nyang
-
-
-
+    Total_price VARCHAR(32) NOT NULL,
+    PRIMARY KEY (Bag_id)
+  );
+  CREATE TABLE SHOPITEM (
+    Sbag_id INT(11) NOT NULL,
+    Sctm_id INT(11) NOT NULL,
+    Sitem_code  VARCHAR(10) NOT NULL,
+    Stotal_num INT,
+    FOREIGN KEY (Sbag_id) REFERENCES SHOPBAG(Bag_id),
+    FOREIGN KEY (Sctm_id) REFERENCES CUSTOMER(Custom_id),
+    FOREIGN KEY (Sitem_code) REFERENCES ITEM(Item_code),
+    PRIMARY KEY (Sbag_id, Sctm_id)
+  );
 
 INSERT INTO CUSTOMER VALUES
 (10000, 20000,'aaa000', '010-1111-1111',NULL,NULL,NULL,NULL,NULL),
