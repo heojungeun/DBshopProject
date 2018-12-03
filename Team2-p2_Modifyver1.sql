@@ -414,5 +414,13 @@ ALTER TABLE ORDERS ADD foreign key (Obag_id) REFERENCES SHOPBAG (Bag_id);
 ALTER TABLE ORDERS ADD foreign key (Oship_id) REFERENCES SHIPCP (Ship_id);
 ALTER TABLE SHOPBAG ADD foreign key (Bctm_id) REFERENCES CUSTOMER (Custom_id);
 
+CREATE INDEX idx_ctm_id ON CUSTOMER(Custom_id);
+CREATE INDEX idx_ctg_id ON CATEGORY(Category_id);
+CREATE INDEX idx_item_name ON ITEM(Item_name);
+CREATE INDEX idx_ord_date ON ORDERS(Order_date);
+CREATE INDEX idx_item_stc ON ITEM(Stock);
+
+
+
 select COUNT(*) from ITEM where Stock <= 20;
 select COUNT(*) from CUSTOMER;
