@@ -46,7 +46,9 @@ body {
 	text-align: right;
 	padding-bottom: 10px;
 }
-
+.box-itemcnt{
+	margin-bottom : 10px;
+}
 .btn_submit {
 	float: right;
 	font-family: 'Nanum Gothic', sans-serif;

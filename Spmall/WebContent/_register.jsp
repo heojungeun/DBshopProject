@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>_register</title>
 </head>
 <body>
 
@@ -15,12 +15,14 @@
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
-		
+		String sex = request.getParameter("sex");
+		String age = request.getParameter("age");
+		String job = request.getParameter("job");
 		// 2.DB에 저장하기
 		testConn db = new testConn();
 		db.connection();
-		String sql = "INSERT INTO people (id,password,name,phone,address)"
-				+"values ('"+id+"','"+pw+"','"+name+"','"+phone+"','"+address+"')";
+		String sql = "INSERT INTO CUSTOMER "
+				+"values ('"+id+"','"+pw+"','"+address+"','"+phone+"','"+sex+"','"+age+"','"+name+"','"+job+"',NULL)";
 		db.insert(sql);
 		db.Close();
 		response.sendRedirect("Login.jsp");

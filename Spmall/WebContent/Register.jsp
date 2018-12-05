@@ -6,15 +6,11 @@
 <link rel="stylesheet" href="./Style_login.css" type="text/css">
 <link rel="stylesheet" href="./Style.css" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>sign up</title>
 </head>
 <body>
 
-	<div class="helloId">
-	<h1 id="title"> WeMakethePrics </h1>
-	</div><br/>
 	<center>
-
 		<div class="login">
 			<div class="login-screen">
 				<div class="app-title">
@@ -22,7 +18,7 @@
 				</div>
 				<div class="login-form">
 
-					<form action="_register.jsp">
+					<form action="_register.jsp" method = "POST">
 						<div class="control-group">
 							<input type="text" name="id" class="login-field" value=""
 								placeholder="아이디">
@@ -32,19 +28,31 @@
 								placeholder="비밀번호">
 						</div>
 						<div class="control-group">
+							<input type="text" name="address" class="login-field" value=""
+								placeholder="주소" >
+						</div>
+						<div class="control-group">
+							<input type="text" name="phone" class="login-field" value=""
+								placeholder="전화번호('-' 포함)">
+						</div>
+						<div class="control-group">
+							<input type="text" name="sex" class="login-field" value=""
+								placeholder="성별">
+						</div>
+						<div class="control-group">
+							<input type="text" name="age" class="login-field" value=""
+								placeholder="나이" >
+						</div>
+						<div class="control-group">
 							<input type="text" name="name" class="login-field" value=""
 								placeholder="이름"> 
 						</div>
 						<div class="control-group">
-							<input type="text" name="phone" class="login-field" value=""
-								placeholder="전화번호(숫자만입력하세요!)">
-						</div>
-						<div class="control-group">
-							<input type="text" name="address" class="login-field" value=""
-								placeholder="주소" >
+							<input type="text" name="job" class="login-field" value=""
+								placeholder="직업">
 						</div>
 
-						<input type="submit" value="Join!"
+						<input type="submit" value="Join"
 							class="btn btn-primary btn-large btn-block">
 
 						<a class="login-link" href="Login.jsp"> 돌아가기 </a>

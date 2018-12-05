@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class testConn {
  
 	Connection connection = null;
-    Statement stm = null;
+    Statement stmt = null;
     PreparedStatement pstmt;
     ResultSet resultSet = null;
  
@@ -29,11 +29,16 @@ public class testConn {
     }
     
     public void insert(String sql) throws SQLException {
-		pstmt = connection.prepareStatement(sql);
-		pstmt.execute();
+    	connection.setAutoCommit(false);
+    	pstmt = connection.prepareStatement(sql);
+		pstmt.executeUpdate();
 		connection.commit();	
     }
-    
+//    public void update(String sql) throws SQLException {
+//    	connection.setAutoCommit(false);
+//		int res = stmt.executeUpdate(sql);
+//		connection.commit();	
+//    }
     public void Close () throws SQLException {
         if (connection != null) {
         	pstmt.close();
