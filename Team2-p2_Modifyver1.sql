@@ -419,7 +419,10 @@ CREATE INDEX idx_ctg_id ON CATEGORY(Category_id);
 CREATE INDEX idx_item_name ON ITEM(Item_name);
 CREATE INDEX idx_ord_date ON ORDERS(Order_date);
 CREATE INDEX idx_item_stc ON ITEM(Stock);
-
+SHOW INDEX FROM CUSTOMER;
+SHOW INDEX FROM CATEGORY;
+SHOW INDEX FROM ITEM;
+SHOW INDEX FROM ORDERS;
 
 
 select COUNT(*) from ITEM where Stock <= 20;
